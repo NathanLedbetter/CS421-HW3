@@ -1,0 +1,24 @@
+{% extends "base.html"%}
+
+{% block content %}
+  <form method = "POST">
+    {{ form1.hidden_tag() }}
+    {{ form1.name.label }}<br> {{ form1.name() }}<br>
+    {{ form1.grade.label }}<br> {{ form1.grade() }}<br>
+    {{ form1.submit() }}
+  </form>
+  <br>
+  <form method = "POST">
+    {{ form2.hidden_tag() }}
+    {{ form2.id.label }}<br> {{ form2.id() }}<br>
+    {{ form2.submit() }}
+  </form>
+  <br>
+  <form action="/results" method = "GET">
+    <button type="submit">Show all students</button>
+  </form>
+  <br>
+  <form action="/passing" method = "GET">
+    <button type="submit">Show only passing students</button>
+  </form>
+{% endblock %}

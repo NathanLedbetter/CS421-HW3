@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <dl>
+    {% for student in students%}
+      {% if student.name != '' %}
+        <dt>{{student.name}}</dt>
+        <dd>Grade: {{student.grade}}</dd>
+      {% endif %}
+    {%endfor%}
+  </dl>
+  <form action="/" method = "GET">
+    <button type="submit">Back</button>
+  </form>
+{% endblock %}
